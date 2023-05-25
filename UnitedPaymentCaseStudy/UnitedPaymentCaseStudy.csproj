@@ -1,0 +1,75 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.5" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="NHibernate" Version="5.4.2" />
+    <PackageReference Include="FluentNHibernate" Version="3.2.0" />
+    <PackageReference Include="Serilog" Version="2.12.0" />
+    <PackageReference Include="Npgsql" Version="7.0.4" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="FluentValidation" Version="11.5.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Business\" />
+    <None Remove="Data\" />
+    <None Remove="Business\Interfaces\" />
+    <None Remove="Business\Services\" />
+    <None Remove="Data\Mapping\" />
+    <None Remove="Data\Entity\" />
+    <None Remove="Context\" />
+    <None Remove="Extensions\" />
+    <None Remove="Mapper\" />
+    <None Remove="Business\Dto\" />
+    <None Remove="ConnectedService\" />
+    <None Remove="ConnectedService\ExternalApiCalls\" />
+    <None Remove="ConnectedService\Payzee\Login\" />
+    <None Remove="ConnectedService\Payzee\Services\" />
+    <None Remove="Data\Validation\" />
+    <None Remove="Core\" />
+    <None Remove="Core\BaseEntity\" />
+    <None Remove="Core\BaseService\" />
+    <None Remove="Core\BaseEnum\" />
+    <None Remove="Core\BaseService\Abstract\" />
+    <None Remove="Core\BaseService\Concrete\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Business\" />
+    <Folder Include="Data\" />
+    <Folder Include="Business\Interfaces\" />
+    <Folder Include="Business\Services\" />
+    <Folder Include="Data\Mapping\" />
+    <Folder Include="Data\Entity\" />
+    <Folder Include="Context\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Mapper\" />
+    <Folder Include="Business\Dto\" />
+    <Folder Include="ConnectedService\" />
+    <Folder Include="ConnectedService\Payzee\" />
+    <Folder Include="ConnectedService\Payzee\Interface\" />
+    <Folder Include="ConnectedService\Payzee\Services\" />
+    <Folder Include="Data\Validation\" />
+    <Folder Include="Core\" />
+    <Folder Include="Core\BaseEntity\" />
+    <Folder Include="Core\BaseService\" />
+    <Folder Include="Core\BaseEnum\" />
+    <Folder Include="Core\BaseService\Abstract\" />
+    <Folder Include="Core\BaseService\Concrete\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="ConnectedService\KpsReference.json" />
+  </ItemGroup>
+</Project>
